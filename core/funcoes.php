@@ -48,7 +48,8 @@ add_shortcode('usuario_form', 'CadFormfcn');
 
 function CadFormfcn($atts,$content){
  if($_POST){
-     print_r($_POST);
+     require"SalvaDados.php";
+     $sd = new salvaDados();
  }
  else{
         global $prefixo; 

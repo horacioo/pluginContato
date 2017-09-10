@@ -59,7 +59,7 @@ function CadFormfcn($atts,$content){
         if(isset($atts['titulo'])){$titulo= "<h2>".$atts['titulo']."</h2>";}
         global $wpdb;
         $x="<form action='' enctype=\"multipart/form-data\"  method='post' id='Formulario_Cadastro_Usuario' $classe name=Cadastro[".$prefixo."0_cadastro][]>";"<hr>";
-        $x.="\n<input type='hidden' name=Cadastro[".$prefixo."0_cadastro][Usuarios][token] value='".CriaToken()."'>";
+        $x.="\n<input type='hidden' name=token value='".CriaToken()."'>";
         $x.="\n<input type='hidden' name=Prefixo value='".$wpdb->prefix."'>";
         $x.="<input type='hidden' id='EnderecoDeAjaxEnvioFormulario' value='". get_site_url()."/recebe_dados_formulario_usuario_'>";
         $x.=$titulo;
@@ -172,7 +172,7 @@ function Nomefcn($atts,$content){
     $classe="";
     $value="";
     $id="";
-    $label="";
+    $label="Nome: ";
     /*******************/
     
     if(isset($atts['placeholder'])){$placeholder="placeholder ='".$atts['placeholder']."'";}
@@ -203,7 +203,7 @@ add_shortcode('usuario_data_nascimento', 'Datafcn');
 function Datafcn($atts,$content){
  global $prefixo;
  
-  $label="";
+  $label="Data de Nascimento: ";
   if(isset($atts['label'])){$label=$atts['label'];}
  
  return "<p>$label<input type='date' $classe $placeholder name=Usuario[".$prefixo."0_cadastro][data] $id $value></p>";
@@ -230,7 +230,7 @@ function Loginfcn($atts,$content){
     $classe="";
     $value="";
     $id="";
-    $label="";
+    $label="Login: ";
        
     if(isset($atts['placeholder'])){$placeholder="placeholder ='".$atts['placeholder']."'";}
     if(isset($atts['class'])){$classe="class='".$atts['class']."'";}
@@ -260,7 +260,7 @@ function Senhafcn($atts,$content){
     $placeholder="";
     $classe="";
     $id="";
-    $label="";
+    $label="Senha: ";
        
     if(isset($atts['placeholder'])){$placeholder="placeholder ='".$atts['placeholder']."'";}
     if(isset($atts['class'])){$classe="class='".$atts['class']."'";}
@@ -291,7 +291,7 @@ function Rgfcn($atts,$content){
     $placeholder="";
     $classe="";
     $id="";
-    $label="";
+    $label="Rg: ";
        
     if(isset($atts['placeholder'])){$placeholder="placeholder ='".$atts['placeholder']."'";}
     if(isset($atts['class'])){$classe="class='".$atts['class']."'";}
@@ -315,7 +315,7 @@ function cpffcn($atts,$content){
     $placeholder="";
     $classe="";
     $id="";
-    $label="";
+    $label="Cpf: ";
        
     if(isset($atts['placeholder'])){$placeholder="placeholder ='".$atts['placeholder']."'";}
     if(isset($atts['class'])){$classe="class='".$atts['class']."'";}
@@ -338,7 +338,7 @@ function Profissaofcn($atts,$content){
     
     $classe="";
     $id="";
-    $label="";
+    $label="Profissão: ";
       
     if(isset($atts['class'])){$classe="class='".$atts['class']."'";}
     if(isset($atts['id'])){$id="id='".$atts['id']."'";}
@@ -389,7 +389,7 @@ function Emailfcn($atts,$content){
     $placeholder="";
     $classe="";
     $id="";
-    $label="";
+    $label="E-mail: ";
        
     if(isset($atts['placeholder'])){$placeholder="placeholder ='".$atts['placeholder']."'";}
     if(isset($atts['class'])){$classe="class='".$atts['class']."'";}
@@ -435,7 +435,7 @@ function Telfcn($atts,$content){
     $placeholder="";
     $classe="";
     $id="";
-    $label="";
+    $label="Telefone: ";
        
     if(isset($atts['placeholder'])){$placeholder="placeholder ='".$atts['placeholder']."'";}
     if(isset($atts['class'])){$classe="class='".$atts['class']."'";}
@@ -464,7 +464,7 @@ function Ruafcn($atts,$content){
     $placeholder="";
     $classe="";
     $id="";
-    $label="";
+    $label="Endereço: ";
     if(isset($atts['placeholder'])){$placeholder="placeholder ='".$atts['placeholder']."'";}
     if(isset($atts['class'])){$classe="class='".$atts['class']."'";}
     if(isset($atts['id'])){$id="id='".$atts['id']."'";}
@@ -487,7 +487,7 @@ function numerofcn($atts,$content){
     $placeholder="";
     $classe="";
     $id="";
-    $label="";
+    $label="Numero: ";
     if(isset($atts['placeholder'])){$placeholder="placeholder ='".$atts['placeholder']."'";}
     if(isset($atts['class'])){$classe="class='".$atts['class']."'";}
     if(isset($atts['id'])){$id="id='".$atts['id']."'";}
@@ -515,7 +515,7 @@ function Bairrofcn($atts,$content){
     $placeholder="";
     $classe="";
     $id="";
-    $label="";
+    $label="Bairro: ";
        
     if(isset($atts['placeholder'])){$placeholder="placeholder ='".$atts['placeholder']."'";}
     if(isset($atts['class'])){$classe="class='".$atts['class']."'";}
@@ -546,7 +546,7 @@ function Complementofcn($atts,$content){
     $placeholder="";
     $classe="";
     $id="";
-    $label="";
+    $label="Complemento: ";
        
     if(isset($atts['placeholder'])){$placeholder="placeholder ='".$atts['placeholder']."'";}
     if(isset($atts['class'])){$classe="class='".$atts['class']."'";}
@@ -574,7 +574,7 @@ function Cidadefcn($atts,$content){
     
     $classe="";
     $id="";
-    $label="";
+    $label="Cidade: ";
       
     if(isset($atts['class'])){$classe="class='".$atts['class']."'";}
     if(isset($atts['id'])){$id="id='".$atts['id']."'";}
@@ -608,7 +608,7 @@ function estadofcn($atts,$content){
     
     $classe="";
     $id="";
-    $label="";
+    $label="Estado: ";
       
     if(isset($atts['class'])){$classe="class='".$atts['class']."'";}
     if(isset($atts['id'])){$id="id='".$atts['id']."'";}

@@ -11,10 +11,9 @@ class bd {
     protected $id;
     protected $dados;
 
-    function __construct() {
-        
-    }
+    function __construct() {}
 
+    
     function Salva($dados = '', $tabela = '') {
         global $wpdb;
         $chaves = array_keys($dados);

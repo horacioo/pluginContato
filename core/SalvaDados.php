@@ -38,24 +38,36 @@ class salvaDados extends bd {
         $this->SalvaEndereco();
     }
 
-    private function SalvaUsuarios() {
+    
+    
+    
+    private function SalvaUsuarios() 
+    {
         if($this->dadosUsuario['profisao'] < 1){$this->dadosUsuario['profissao']=1;}
         $this->Salva($this->dadosUsuario,$this->Prefixo."0_cadastro");
-    }
+    }   
+    
 
-    private function SalvaEmail() {
+    private function SalvaEmail() 
+    {
         echo"<br>";
-        //print_r($this->dadosEmail);
+        foreach ($this->dadosEmail['email'] as $e):
+            echo "email : ".$e;
+            $this->Salva(array("email"=>$e),$this->Prefixo."0_email");
+        endforeach; 
     }
 
     private function SalvaTelefone() {
         echo"<br>";
-        //print_r($this->dadosTelefone);
+         foreach ($this->dadosTelefone['telefone'] as $t):
+            echo "telefone : ".$e;
+            $this->Salva(array("telefone"=>$t),$this->Prefixo."0_telefone");
+        endforeach; 
     }
 
     private function SalvaEndereco() {
         echo"<br>";
-        //print_r($this->dadosEndereco);
+         $this->Salva($this->dadosEndereco,$this->Prefixo."0_endereco");
     }
 
 }
